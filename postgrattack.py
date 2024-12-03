@@ -4,10 +4,10 @@ from sqlalchemy import create_engine
 import json
 
 # 데이터베이스 연결 정보
-db_host = "15.168.253.251"  # PostgreSQL 서버 주소 (로컬호스트 또는 원격 IP)
+db_host = "56.155.9.34"  # PostgreSQL 서버 주소 (로컬호스트 또는 원격 IP)
 db_port = "5432"       # PostgreSQL 포트 (기본값 5432)
 db_name = "card"       # 데이터베이스 이름
-db_user = "admin"      # 데이터베이스 사용자 이름
+db_user = "postgres"      # 데이터베이스 사용자 이름
 db_password = "0714"  # 사용자 비밀번호
 
 # JSON 파일 읽기

@@ -3,13 +3,13 @@ from pymongo import MongoClient
 
 # MongoDB 서버 연결 정보
 # 형식: "mongodb://<username>:<password>@<host>:<port>/<database>"
-mongo_uri = "mongodb://root:example@56.155.9.34:27017/cardImage"
+mongo_uri = "mongodb://root:example@56.155.9.34:27017/Image"
 
 # MongoDB 클라이언트 설정
 client = MongoClient(mongo_uri)
 
 # 데이터베이스와 컬렉션 설정
-db = client["cardImage"]  # 데이터베이스 이름
+db = client["Image"]  # 데이터베이스 이름
 collection = db["cardImage"]  # 컬렉션 이름
 
 # CSV 파일을 읽어 데이터프레임 생성

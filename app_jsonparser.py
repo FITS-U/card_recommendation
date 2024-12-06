@@ -12,7 +12,7 @@ import json
 app = Flask(__name__)
 
 # LangChain 초기화
-db_path = "C:/Users/user/Desktop/card_recommendation/chromaDB"
+db_path = "/home/ubuntu/card_recommendation/chromaDB"
 embeddings = OpenAIEmbeddings()
 vectorstore = Chroma(persist_directory=db_path, embedding_function=embeddings)
 
@@ -52,6 +52,10 @@ prompt_template = PromptTemplate(
 llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.3)
 llm_chain = LLMChain(llm=llm, prompt=prompt_template)
 
+@app.route("/")
+def index():
+    return "Hello"
+
 @app.route('/recommend', methods=['POST'])
 def recommend():
     # 사용자 입력 데이터 받아오기
@@ -75,4 +79,4 @@ def recommend():
         return jsonify({"error": f"예기치 않은 오류: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, port=9090)
+    app.run(host='0.0.0.0', port=9995)

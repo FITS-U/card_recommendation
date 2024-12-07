@@ -5,13 +5,13 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 import openai
 
-file_path = "C:/Users/user/Desktop/card_recommendation/data/card_data_benefits.json"
+file_path = "./data/card_data_benefits.json"
 
 # JSON 파일 로드 (리스트 형태)
 with open(file_path, "r", encoding="utf-8") as file:
     card_data = json.load(file)
 
-db_path = "C:/Users/user/Desktop/card_recommendation/chromaDB"
+db_path = "./chromaDB"
 embeddings = OpenAIEmbeddings()
 vectorstore = Chroma(persist_directory=db_path, embedding_function=embeddings)
 
